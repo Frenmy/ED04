@@ -1,64 +1,71 @@
 package cuentas;
 
+/**
+ * Clase que contiene información de una cuenta bancaria
+ * @author Frenmy
+ */
 public class CCuenta {
 
     /**
-     * @return the nombre
+     * Método que retorna el nombre de la cuenta
+     * @return el nombre
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * @param nombre the nombre to set
+     * Método que permite modificar el nombre del dueño de la cuenta
+     * @param nombre modifica el nombre
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * @return the cuenta
+     * @return la cuenta
      */
     public String getCuenta() {
         return cuenta;
     }
 
     /**
-     * @param cuenta the cuenta to set
+     * @param cuenta modifica la cuenta
      */
     public void setCuenta(String cuenta) {
         this.cuenta = cuenta;
     }
 
     /**
-     * @return the saldo
+     * @return el saldo
      */
     public double getSaldo() {
         return saldo;
     }
 
     /**
-     * @param saldo the saldo to set
+     * @param saldo modifica el saldo
      */
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
     /**
-     * @return the tipoInterés
+     * @return el interés
      */
     public double getTipoInterés() {
         return tipoInterés;
     }
 
     /**
-     * @param tipoInterés the tipoInterés to set
+     * @param tipoInterés modifica el interes
      */
     public void setTipoInterés(double tipoInterés) {
         this.tipoInterés = tipoInterés;
     }
 
 
+    
     private String nombre;
     private String cuenta;
     private double saldo;
@@ -68,6 +75,13 @@ public class CCuenta {
     {
     }
 
+    /**
+     * 
+     * @param nom
+     * @param cue
+     * @param sal
+     * @param tipo 
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -75,11 +89,20 @@ public class CCuenta {
         saldo=sal;
     }
 
+    /**
+     * 
+     * @return el saldo de la cuenta
+     */
     public double estado()
     {
         return getSaldo();
     }
-
+    
+    /**
+     * 
+     * @param cantidad
+     * @throws Exception se lanza si la cantidad es negariva
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -87,6 +110,11 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+     * 
+     * @param cantidad
+     * @throws Exception se lanza si la cantidad a retirar es negativa
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
